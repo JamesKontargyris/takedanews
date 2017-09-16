@@ -1,0 +1,14 @@
+.site {
+  max-width:100rem;
+  min-height:100vh;
+  margin:0 auto;
+  background-color:white;
+  box-shadow: 0 2rem 2rem rgba(0,0,0,0.5);
+  border-top:1.6rem solid $red;
+}
+
+.site-content {
+  max-width: 90rem;
+  margin:0 auto;
+  padding:3rem 2rem;
+}

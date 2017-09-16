@@ -1,0 +1,8 @@
+.post__meta {
+  @include font-size(14, 16);
+  margin-bottom: $base-spacing;
+}
+
+.post__image {
+  margin-bottom:$base-spacing;
+}

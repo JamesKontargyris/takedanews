@@ -1,7 +1,12 @@
 body {
   color: $base-font-color;
   font-family: $base-font-family;
-  font-size: $base-font-size;
+  font-size: $base-font-size * 0.9;
+  line-height:$base-line-height;
+
+  @include grid-media($grid__l-up) {
+    font-size: $base-font-size;
+  }
 }
 
 h1,
@@ -14,6 +19,18 @@ h6 {
   font-size: $base-font-size;
   line-height: $heading-line-height;
   margin: 0 0 $base-spacing;
+}
+
+h1 {
+  @include font-size(21,24);
+
+  @include grid-media($grid__m-up) {
+    @include font-size(28,32);
+  }
+
+  @include grid-media($grid__l-up) {
+    @include font-size(36,42);
+  }
 }
 
 p {

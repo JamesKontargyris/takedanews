@@ -134,3 +134,18 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+add_image_size('post-image', 900);
+
+/**
+ * Remove 'protected:' and 'private:' from post titles
+ *
+ * @param $content
+ *
+ * @return string
+ */
+function title_format($content) {
+	return '%s';
+}
+add_filter('private_title_format', 'title_format');
+add_filter('protected_title_format', 'title_format');
+

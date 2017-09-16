@@ -1,0 +1,22 @@
+$default-grid: (
+        columns: 12,
+        gutter: 20px,
+);
+
+$grid__s-up: (
+        columns: 12,
+        gutter: 20px,
+        media: "(min-width:320px)",
+);
+
+$grid__m-up: (
+        columns: 12,
+        gutter: 20px,
+        media: "(min-width:480px)",
+);
+
+$grid__l-up: (
+        columns: 12,
+        gutter: 20px,
+        media: "(min-width:768px)",
+);

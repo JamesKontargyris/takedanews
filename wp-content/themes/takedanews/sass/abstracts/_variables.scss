@@ -1,12 +1,12 @@
 // Typography
-$base-font-family: sans-serif;
-$heading-font-family: sans-serif;
+$base-font-family: 'Open Sans', sans-serif;
+$heading-font-family: 'Open Sans', sans-serif;
 
 // Font Sizes
-$base-font-size: 1.5rem;
+$base-font-size: 1.6rem;
 
 // Line height
-$base-line-height: 1.8;
+$base-line-height: 1.5;
 $heading-line-height: 1.2;
 
 // Other Sizes
@@ -16,7 +16,7 @@ $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 
 // Primary Colours
-$red: #cd0f36;
+$red: #ee1100;
 $green: #00a0a3;
 $blue: #003b77;
 $light-grey: #ebebeb;
@@ -31,7 +31,7 @@ $soft-black: #222222;
 // Font Colors
 $base-font-color: $soft-black;
 $action-color: $blue;
-$link-color:$green;
+$link-color:$red;
 
 // Border
 $base-border-color: $light-grey;
