@@ -1,0 +1,50 @@
+body {
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading-font-family;
+  font-size: $base-font-size;
+  line-height: $heading-line-height;
+  margin: 0 0 $base-spacing;
+}
+
+p {
+  margin-top:0;
+  margin-bottom:$base-spacing;
+}
+
+a:link,
+a:visited {
+  color: $link-color;
+  text-decoration: none;
+  transition: all $base-duration $base-timing;
+
+  &:active,
+  &:focus,
+  &:hover {
+  }
+}
+
+ul, ol {
+  margin-left:0px;
+}
+
+img,
+picture {
+  margin: 0;
+  max-width: 100%;
+}
+
+// Text Helpers
+.text--upper {
+  text-transform: uppercase;
+  letter-spacing: 0rem;
+}

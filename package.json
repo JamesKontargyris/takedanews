@@ -1,0 +1,23 @@
+{
+  "name": "TakedaNews",
+  "version": "1.0.0",
+  "description": "TakedaNews Node Modules",
+  "main": "index.php",
+  "scripts": {},
+  "author": "James Kontargyris",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^2.1.0",
+    "gulp-cleancss": "^0.2.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.2.0",
+    "gulp-svgmin": "^1.1.1",
+    "gulp-uglify": "^1.5.3",
+    "node-sass": "3.7.0"
+  }
+}
