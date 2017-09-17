@@ -149,3 +149,11 @@ function title_format($content) {
 add_filter('private_title_format', 'title_format');
 add_filter('protected_title_format', 'title_format');
 
+/**
+ * Add css styles to back-end WYSIWYG editor
+ */
+function add_editor_styles() {
+	add_editor_style( 'style.css' );
+}
+add_action( 'admin_init', 'add_editor_styles' );
+

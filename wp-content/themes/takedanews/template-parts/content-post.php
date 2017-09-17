@@ -1,16 +1,5 @@
-<?php
-/**
- * Template part for displaying posts
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package takedanews
- */
-
-?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="post__header">
+    <header class="post__header">
 
 		<?php the_title( '<h1 class="post__title">', '</h1>' ); ?>
 
@@ -20,26 +9,26 @@
 
     </header>
 
-	<div class="post__content">
-        <?php if(has_post_thumbnail()) : ?>
+    <div class="post__content">
+		<?php if(has_post_thumbnail()) : ?>
             <div class="post__image">
-                <?php the_post_thumbnail('post-image'); ?>
+				<?php the_post_thumbnail('post-image'); ?>
             </div>
-        <?php endif; ?>
+		<?php endif; ?>
 		<?php
-			the_content( sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'takedanews' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			) );
+		the_content( sprintf(
+			wp_kses(
+			/* translators: %s: Name of current post. Only visible to screen readers */
+				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'takedanews' ),
+				array(
+					'span' => array(
+						'class' => array(),
+					),
+				)
+			),
+			get_the_title()
+		) );
 		?>
-	</div>
+    </div>
 
 </article><!--/#post-<?php the_ID(); ?> -->

@@ -33,6 +33,18 @@ h1 {
   }
 }
 
+h2 {
+  @include font-size(21,24);
+
+  @include grid-media($grid__m-up) {
+    @include font-size(24,28);
+  }
+
+  @include grid-media($grid__l-up) {
+    @include font-size(32,36);
+  }
+}
+
 p {
   margin-top:0;
   margin-bottom:$base-spacing;
