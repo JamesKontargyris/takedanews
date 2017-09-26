@@ -44,7 +44,7 @@
 	                        <?php endif; ?>
 	                        <?php if(get_sub_field('potential_actions')) : ?>
                                 <div class="newsletter__content__section__box">
-                                    <h5 class="newsletter__content__section__box__title">What this means for Takeda</h5>
+                                    <h5 class="newsletter__content__section__box__title">Potential Actions</h5>
 			                        <?php the_sub_field('potential_actions'); ?>
                                 </div>
 	                        <?php endif; ?>
