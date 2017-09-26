@@ -102,9 +102,11 @@ add_action( 'widgets_init', 'takedanews_widgets_init' );
 function takedanews_scripts() {
 	wp_enqueue_style( 'takedanews-style', get_stylesheet_uri() );
 
+	wp_enqueue_script( 'takedanews-jquery', 'https://code.jquery.com/jquery-3.2.1.min.js', array(), '20170926', true );
 	wp_enqueue_script( 'takedanews-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'takedanews-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'takedanews-site-js', get_template_directory_uri() . '/js/site.js', array(), '20170926', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -157,3 +159,18 @@ function add_editor_styles() {
 }
 add_action( 'admin_init', 'add_editor_styles' );
 
+/**
+ * Check if the current section id is contained within the current URL
+ *
+ * @param string $section_id
+ *
+ * @return bool
+ */
+function url_has_section_id($section_id = '')
+{
+	if (strpos($_SERVER['REQUEST_URI'], '#' . $section_id) !== false) {
+		return true;
+	} else {
+	}
+	return false;
+}

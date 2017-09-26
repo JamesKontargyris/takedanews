@@ -26,6 +26,7 @@
 .site-header__logo {
   max-width:8rem;
   margin-right:0.7rem;
+  cursor: pointer;
 
   @include grid-media($grid__m-up) {
     margin-right:1rem;

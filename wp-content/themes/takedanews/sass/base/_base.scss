@@ -10,3 +10,10 @@ body {
   overflow-x: hidden;
   background-color:#efefef;
 }
+
+hr {
+  background-color: $blue;
+  border: 0;
+  height: 1px;
+  margin: $base-spacing * 2 0;
+}

@@ -1,0 +1,13 @@
+.button {
+  border-radius: $base-border-radius;
+  padding:1rem;
+}
+
+.button--back-to-top {
+  display: none;
+  position: fixed;
+  bottom:2rem;
+  right:2rem;
+  background:rgba($grey, 0.5);
+  font-weight: bold;
+}

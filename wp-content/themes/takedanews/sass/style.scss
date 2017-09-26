@@ -43,8 +43,9 @@ Text Domain: takedanews
 'layout/structure';
 
 /// Components (modules)
-//@import
-//'components/';
+@import
+'components/buttons',
+'components/newsletter';
 
 /// Page-specific stylesheets
 @import
