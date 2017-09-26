@@ -24,7 +24,11 @@
                     <span class="site-header__logo-tagline--break">Brighter Future</span>
                 </div>
             </div>
-            <div class="site-header__site-title">Newsroom</div>
+            <?php if(is_front_page()) : ?>
+                <h1 class="site-header__site-title">Newsroom</h1>
+            <?php else : ?>
+                <div class="site-header__site-title">Newsroom</div>
+            <?php endif; ?>
         </div>
     </header><!-- #masthead -->
 

@@ -6,6 +6,7 @@
 
 .newsletter__title {
   margin-bottom:$small-spacing * 0.5;
+  letter-spacing: -0.1rem;
 }
 
 .newsletter__date {
@@ -89,4 +90,9 @@
     right:3rem;
     margin-top:0;
   }
+}
+
+.newsletter__back-link {
+  @include font-size(11, 11);
+  text-transform: uppercase;
 }

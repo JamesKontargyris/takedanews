@@ -70,7 +70,11 @@ h4 {
 }
 
 h5 {
-  @include font-size(18,21);
+  @include font-size(16,21);
+
+  @include grid-media($grid__l-up) {
+    @include font-size(18,21);
+  }
 }
 
 h6 {

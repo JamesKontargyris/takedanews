@@ -174,3 +174,20 @@ function url_has_section_id($section_id = '')
 	}
 	return false;
 }
+
+function get_latest_newsletter()
+{
+	return get_posts([
+		'post_type' => 'newsletter',
+		'posts_per_page' => 1,
+	]);
+}
+
+function get_past_newsletters()
+{
+	return get_posts([
+		'post_type' => 'newsletter',
+		'posts_per_page' => 999999,
+		'offset' => 1,
+	]);
+}

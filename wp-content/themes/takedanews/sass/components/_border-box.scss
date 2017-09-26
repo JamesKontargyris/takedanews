@@ -1,0 +1,26 @@
+.border-box {
+  border:1px solid $blue;
+  border-radius: $base-border-radius;
+  margin-bottom:$base-spacing;
+}
+
+.border-box__title {
+  padding:1rem 2rem;
+  background-color: $blue;
+  color:white;
+  text-transform: uppercase;
+  @include font-size(14,16);
+  font-weight: bold;
+}
+
+.border-box__content {
+  padding:1rem 2rem;
+}
+
+.border-box--grey {
+  border:1px solid $grey;
+
+  .border-box__title {
+    background-color: $grey;
+  }
+}

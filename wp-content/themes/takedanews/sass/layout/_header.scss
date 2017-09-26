@@ -65,6 +65,7 @@
   letter-spacing: -0.1rem;
   font-weight:300;
   color:$grey;
+  margin:0;
 
   @include grid-media($grid__l-up) {
     @include font-size(32, 36);
