@@ -23,4 +23,13 @@
             $('.button--back-to-top').fadeOut();
         }
     });
+
+    // If a section ID is found in the URL, open the relevant section
+    var hash = window.location.hash.substr(1);
+    if(hash) {
+        var section = $('#' + hash);
+        section.find('.newsletter__content__section__articles').slideToggle();
+        section.find('.newsletter__content__section__header__arrow-indicator').toggleClass('hide');
+    }
+
 })();
