@@ -21,7 +21,7 @@
 	                    <?php if(get_sub_field('title')) : ?>
                             <h4 class="newsletter__content__section__title">
                                 <?php if(current_user_can('administrator')) : ?>
-                                    <a href="<?php echo get_the_permalink() . '#' . get_sub_field('section_id'); ?>"><i class="fa fa-chain"></i></a>
+                                    <a href="<?php echo get_the_permalink() . '?pwd_token=' . get_option( 'password_protected_password' ) . '#' . get_sub_field('section_id'); ?>"><i class="fa fa-chain"></i></a>
                                 <?php endif; ?>
                                 <?php the_sub_field('title'); ?>
                             </h4>

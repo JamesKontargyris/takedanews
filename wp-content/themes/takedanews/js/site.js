@@ -26,6 +26,7 @@
 
     // If a section ID is found in the URL, open the relevant section and scroll down to it
     var hash = window.location.hash.substr(1);
+    console.log(hash);
     if(hash) {
         var section = $("#" + hash);
         section.find('.newsletter__content__section__articles').slideToggle();
