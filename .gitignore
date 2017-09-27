@@ -94,6 +94,7 @@ node_modules/
 
 # Custom theme-specific
 !wp-content/themes/takedanews
+!wp-content/login-logo.png
 
 # Composer / NodeJS
 !composer.json
