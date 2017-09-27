@@ -16,6 +16,7 @@
         <ul class="newsletter__content">
             <?php while(have_rows('article_sections')) : the_row(); ?>
                 <li class="newsletter__content__section" id="<?php echo get_sub_field('section_id'); ?>">
+                    <a name="<?php echo get_sub_field('section_id'); ?>"></a>
                     <div class="newsletter__content__section__header">
 	                    <?php if(get_sub_field('title')) : ?>
                             <h4 class="newsletter__content__section__title">
