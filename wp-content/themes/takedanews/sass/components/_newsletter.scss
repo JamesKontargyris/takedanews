@@ -40,7 +40,6 @@
 
 .newsletter__content__section__title {
   margin-bottom:$small-spacing;
-  word-break: break-all;
   color:$blue;
 
   @include grid-media($grid__l-up) {

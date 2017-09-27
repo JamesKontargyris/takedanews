@@ -24,12 +24,15 @@
         }
     });
 
-    // If a section ID is found in the URL, open the relevant section
+    // If a section ID is found in the URL, open the relevant section and scroll down to it
     var hash = window.location.hash.substr(1);
     if(hash) {
-        var section = $('#' + hash);
+        var section = $("#" + hash);
         section.find('.newsletter__content__section__articles').slideToggle();
         section.find('.newsletter__content__section__header__arrow-indicator').toggleClass('hide');
+
+        var aTag = $("a[name='"+ hash +"']");
+        $('html,body').animate({scrollTop: aTag.offset().top},'fast');
     }
 
 })();
