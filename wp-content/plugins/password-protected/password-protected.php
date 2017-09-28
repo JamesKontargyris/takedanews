@@ -610,7 +610,7 @@ class Password_Protected {
 		if ( $remember ) {
 			$expiration = $expire = current_time( 'timestamp' ) + apply_filters( 'password_protected_auth_cookie_expiration', 1209600, $remember );
 		} else {
-			$expiration = current_time( 'timestamp' ) + apply_filters( 'password_protected_auth_cookie_expiration', 172800, $remember );
+			$expiration = current_time( 'timestamp' ) + apply_filters( 'password_protected_auth_cookie_expiration', 1800, $remember );
 			$expire = 0;
 		}
 
