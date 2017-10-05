@@ -17,3 +17,7 @@ hr {
   height: 1px;
   margin: $base-spacing * 2 0;
 }
+
+ul, ol {
+  margin-bottom:$base-spacing;
+}
