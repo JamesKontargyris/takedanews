@@ -240,7 +240,7 @@ add_action( 'pre_get_posts', 'rc_add_cpts_to_search' );
  * @return [array] [list of custom fields]
  */
 function list_searcheable_acf(){
-	$list_searcheable_acf = array("title", "sub_title", "excerpt_short", "excerpt_long", "xyz", "myACF");
+	$list_searcheable_acf = array("display_title", "display_date", "title", "what_this_means_for_takeda", "potential_actions", "article_title", "article_content");
 	return $list_searcheable_acf;
 }
 /**
@@ -265,7 +265,7 @@ function advanced_custom_search( $where, &$wp_query ) {
 	if( $exploded === FALSE || count( $exploded ) == 0 )
 		$exploded = array( 0 => $terms );
 
-	// reset search in order to rebuilt it as we whish
+	// reset search in order to rebuilt it as we wish
 	$where = '';
 
 	// get searcheable_acf, a list of advanced custom fields you want to search content in
@@ -311,5 +311,17 @@ function advanced_custom_search( $where, &$wp_query ) {
 	endforeach;
 	return $where;
 }
-
 add_filter( 'posts_search', 'advanced_custom_search', 500, 2 );
+
+/**
+ * Adds emphasis to the parts passed in $content that are equal to $search_query.
+ *
+ * @param $content The content to alter.
+ * @param $search_query The search query to match against.
+ *
+ * @return string The emphasized text.
+ */
+function emphasize( $content, $search_query ) {
+	$keys = array_map( 'preg_quote', explode(" ", $search_query ) );
+	return preg_replace( '/(' . implode('|', $keys ) .')/iu', '<strong class="search__found-keywords">\0</strong>', $content );
+}

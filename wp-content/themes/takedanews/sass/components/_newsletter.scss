@@ -103,6 +103,10 @@
     }
   }
 
+  .newsletter__keyword-search-results {
+    @include font-size(13, 16);
+  }
+
   .newsletter__back-link {
     @include font-size(11, 11);
     text-transform: uppercase;

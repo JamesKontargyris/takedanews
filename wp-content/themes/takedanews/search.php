@@ -16,10 +16,12 @@ get_header(); ?>
 		if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<h1 class="page-title"><?php
+				<h1 class="page-title text--tight"><?php
 					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'takedanews' ), '<span>' . get_search_query() . '</span>' );
+					printf( esc_html__( 'Search results for: %s', 'takedanews' ), '<span>' . get_search_query() . '</span>' );
 				?></h1>
+                Your search term(s) was/were found in the following newsletters.
+                <hr>
 			</header><!-- .page-header -->
 
 			<?php
@@ -47,5 +49,4 @@ get_header(); ?>
 	</section><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();
