@@ -1,5 +1,12 @@
 (function()
 {
+    // Function to get URL parameters
+    $.urlParam = function(name){
+        var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+        return results[1] || 0;
+    }
+
+
     // Redirect to homepage on click of logo
     $('.site-header__logo').on('click', function()
     {
@@ -24,16 +31,27 @@
         }
     });
 
-    // If a section ID is found in the URL, open the relevant section and scroll down to it
+    // If a section or article ID is found in the URL, open the relevant section and scroll down to the element with the ID
     var hash = window.location.hash.substr(1);
     console.log(hash);
     if(hash) {
-        var section = $("#" + hash);
-        section.find('.newsletter__content__section__articles').slideToggle();
-        section.find('.newsletter__content__section__header__arrow-indicator').toggleClass('hide');
-
-        var aTag = $("a[name='"+ hash +"']");
-        $('html,body').animate({scrollTop: aTag.offset().top},'fast');
+        var location = $("#" + hash);
+        if($.urlParam('type') == 'section')
+        {
+            location.find('.newsletter__content__section__articles').slideToggle(50, function()
+            {
+                $('html,body').animate({scrollTop: $(location).offset().top},300);
+            });
+            location.find('.newsletter__content__section__header__arrow-indicator').toggleClass('hide');
+        }
+        else if($.urlParam('type') == 'article')
+        {
+            location.closest('.newsletter__content__section__articles').slideToggle(50, function()
+            {
+                $('html,body').animate({scrollTop: $(location).offset().top},300);
+            });
+            location.closest('.newsletter__content__section').find('.newsletter__content__section__header__arrow-indicator').toggleClass('hide');
+        }
     }
 
 })();
