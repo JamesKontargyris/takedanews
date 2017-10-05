@@ -28,11 +28,9 @@
 			    $regex = '/(' . get_search_query(). ')/iu';
 
 			    if (preg_match_all($regex, $section_title, $match)) {
-				    // loop through each match
-				    foreach ($match[0] as &$str)
-					    $str = preg_replace('/(\\d+),(\\d+)/', "$1.$2", $str);
+				    // a match is found, so just display the emphasized title
 				    if($found_count < 3) {
-					    echo '...' . emphasize($str, get_search_query()); // display the section title(s), highlighting the search term
+					    echo '...' . emphasize($section_title, get_search_query()); // display the title, highlighting the search term
 					    $found_count++;
 				    }
 			    }
@@ -48,11 +46,11 @@
 
 					    // Search through article titles
 					    $article_title_key = 'article_sections_'.$i.'_articles_'.$j.'_article_title';
-					    $article_title_content = get_post_meta(get_the_ID(), $article_title_key, true); // the article title as a string
-					    if (preg_match_all($regex, $article_title_content, $match)) {
+					    $article_title = get_post_meta(get_the_ID(), $article_title_key, true); // the article title as a string
+					    if (preg_match_all($regex, $article_title, $match)) {
 						    // a match is found, so just display the emphasized title
 						    if($found_count < 3) {
-							    echo '...' . emphasize($article_title_content, get_search_query()); // display the sentence(s), highlighting the search term
+							    echo '...' . emphasize($article_title, get_search_query()); // display the title, highlighting the search term
 							    $found_count++;
 						    }
 					    }
@@ -112,7 +110,9 @@
 			    // END SEARCHING POTENTIAL ACTIONS FOR DISPLAY
 
 		    }
-	    }; ?>
+	    };
+	    if($found_count > 0) echo '...';
+	    ?>
 
     </div> <!--/.newsletter__keyword-search-results-->
 
