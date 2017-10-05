@@ -13,22 +13,26 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 
+    <div class="search__container">
+        <div class="search__form">
+            <?php get_search_form(); ?>
+        </div>
+    </div>
+
     <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'takedanews' ); ?></a>
 
     <header id="masthead" class="site-header">
         <div class="site-header__container">
             <div class="site-header__logo-container">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/takeda_logo.svg" alt="Takeda" title="Takeda" class="site-header__logo">
-                <div class="site-header__logo-tagline">
-                    Better Health,
-                    <span class="site-header__logo-tagline--break">Brighter Future</span>
-                </div>
+	            <?php if(is_front_page()) : ?>
+                    <h1 class="site-header__site-title">Newsroom</h1>
+	            <?php else : ?>
+                    <div class="site-header__site-title">Newsroom</div>
+	            <?php endif; ?>
             </div>
-            <?php if(is_front_page()) : ?>
-                <h1 class="site-header__site-title">Newsroom</h1>
-            <?php else : ?>
-                <div class="site-header__site-title">Newsroom</div>
-            <?php endif; ?>
+
+            <a href="#" class="search__button"><i class="fa fa-search"></i></a>
         </div>
     </header><!-- #masthead -->
 

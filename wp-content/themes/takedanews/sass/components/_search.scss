@@ -1,0 +1,52 @@
+.search__container {
+  display: none;
+  background-color:$red;
+  padding:$base-spacing 0 $base-spacing * 2;
+  border-bottom:0.5rem solid $red;
+}
+
+.search__form {
+  max-width:90rem;
+  margin:0 auto;
+  padding:0 2rem;
+}
+
+// Wordpress overrides
+form.search-form {
+  width:100%;
+  .search-field {
+    width:100%;
+    font-size:2rem;
+  }
+  .search-submit {
+    display: none;
+  }
+}
+
+.search__button {
+  box-sizing: content-box;
+  background-color: $red;
+  padding:$small-spacing $base-spacing;
+  border-radius: 0 0 $base-border-radius $base-border-radius;
+  margin-top:-2.4rem;
+
+  @include grid-media($grid__l-up) {
+    margin-top:-4.4rem;
+  }
+
+  &:link, &:visited {
+    color:white;
+  }
+
+  &:hover {
+    color:white !important;
+  }
+
+  @include grid-media($grid__l-up) {
+    &:hover {
+      padding-top:2rem;
+    }
+  }
+
+}
+
