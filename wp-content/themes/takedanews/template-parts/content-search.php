@@ -40,11 +40,9 @@
 			    $section_articles_key = 'article_sections_'.$i.'_articles';
 			    $article_count = get_post_meta(get_the_ID(), $section_articles_key, true);
 			    if($article_count) {
-				    for($j=0; $j<$article_count; $j++) { // loop through articles and extract sentences where search keyword(s) is/are found
-					    // use regex to find the sentences where the search query is found
-					    $regex = '/(' . get_search_query(). ')/iu';
-
+				    for($j=0; $j<$article_count; $j++) { // loop through articles
 					    // Search through article titles
+					    $regex = '/(' . get_search_query(). ')/iu';
 					    $article_title_key = 'article_sections_'.$i.'_articles_'.$j.'_article_title';
 					    $article_title = get_post_meta(get_the_ID(), $article_title_key, true); // the article title as a string
 					    if (preg_match_all($regex, $article_title, $match)) {
@@ -56,6 +54,7 @@
 					    }
 
 					    // Search through article content
+					    $regex = '/[A-Z][^\\.;]*(' . get_search_query(). ')[^\\.;]*/';
 					    $article_key = 'article_sections_'.$i.'_articles_'.$j.'_article_content';
 					    $article_content = get_post_meta(get_the_ID(), $article_key, true); // the article content as a string
 					    if (preg_match_all($regex, $article_content, $match)) {
