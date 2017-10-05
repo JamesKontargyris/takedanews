@@ -23,7 +23,7 @@
 		    for ($i=0; $i<$section_count; $i++) {
 		        // START SEARCHING SECTION TITLES FOR DISPLAY
 		        $section_title_key = 'article_sections_' . $i . '_title';
-			    $section_title = get_post_meta(get_the_ID(), $section_title_key, true); // the section title as a string
+			    $section_title = strip_tags(get_post_meta(get_the_ID(), $section_title_key, true)); // the section title as a string
 			    // use regex to find if the search query is found in the section title
 			    $regex = '/(' . get_search_query(). ')/iu';
 
@@ -44,7 +44,7 @@
 					    // Search through article titles
 					    $regex = '/(' . get_search_query(). ')/iu';
 					    $article_title_key = 'article_sections_'.$i.'_articles_'.$j.'_article_title';
-					    $article_title = get_post_meta(get_the_ID(), $article_title_key, true); // the article title as a string
+					    $article_title = strip_tags(get_post_meta(get_the_ID(), $article_title_key, true)); // the article title as a string
 					    if (preg_match_all($regex, $article_title, $match)) {
 						    // a match is found, so just display the emphasized title
 						    if($found_count < 3) {
@@ -56,7 +56,7 @@
 					    // Search through article content
 					    $regex = '/[A-Z][^\\.;]*(' . get_search_query(). ')[^\\.;]*/';
 					    $article_key = 'article_sections_'.$i.'_articles_'.$j.'_article_content';
-					    $article_content = get_post_meta(get_the_ID(), $article_key, true); // the article content as a string
+					    $article_content = strip_tags(get_post_meta(get_the_ID(), $article_key, true)); // the article content as a string
 					    if (preg_match_all($regex, $article_content, $match)) {
 						    // loop through each match
 						    foreach ($match[0] as &$str)
@@ -73,7 +73,7 @@
 			    // START SEARCHING WHAT THIS MEANS FOR TAKEDA FOR DISPLAY
 			    $what_this_means_for_takeda_key = 'article_sections_'.$i.'_what_this_means_for_takeda';
 			    if(get_post_meta(get_the_ID(), $what_this_means_for_takeda_key, true)) {
-				    $what_this_means_for_takeda_content = get_post_meta(get_the_ID(), $what_this_means_for_takeda_key, true); // the content as a string
+				    $what_this_means_for_takeda_content = strip_tags(get_post_meta(get_the_ID(), $what_this_means_for_takeda_key, true)); // the content as a string
                     // use regex to find the sentences where the search query is found
                     $regex = '/[A-Z][^\\.;]*(' . get_search_query(). ')[^\\.;]*/';
 
@@ -92,7 +92,7 @@
 			    // START SEARCHING POTENTIAL ACTIONS FOR DISPLAY
 			    $potential_actions_key = 'article_sections_'.$i.'_potential_actions';
 			    if(get_post_meta(get_the_ID(), $potential_actions_key, true)) {
-				    $potential_actions_content = get_post_meta(get_the_ID(), $potential_actions_key, true); // the content as a string
+				    $potential_actions_content = strip_tags(get_post_meta(get_the_ID(), $potential_actions_key, true)); // the content as a string
 				    // use regex to find the sentences where the search query is found
 				    $regex = '/[A-Z][^\\.;]*(' . get_search_query(). ')[^\\.;]*/';
 
@@ -110,7 +110,9 @@
 
 		    }
 	    };
-	    if($found_count > 0) echo '...';
+	    if($found_count > 0) {
+		    echo '...';
+	    }
 	    ?>
 
     </div> <!--/.newsletter__keyword-search-results-->
