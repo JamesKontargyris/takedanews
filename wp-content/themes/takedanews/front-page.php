@@ -20,7 +20,7 @@ get_header(); ?>
 		<main id="main" class="site-main">
 
         <?php get_template_part('template-parts/partials/partial', 'latest-newsletter'); ?>
-        <?php // get_template_part('template-parts/partials/partial', 'past-newsletters'); ?>
+        <?php get_template_part('template-parts/partials/partial', 'past-newsletters'); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
